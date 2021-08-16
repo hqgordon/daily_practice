@@ -7,8 +7,9 @@
  */
 public class KaiFang {
     public static void main(String[] args) {
-        System.out.println(Sqrt(6));
-        System.out.println(Cube(12));
+//        System.out.println(Sqrt(6));
+//        System.out.println(Cube(12));
+        System.out.println(sqrt1(7));
     }
     public static double Sqrt(int num){
         //使用二分法进行检测 肯定是正数
@@ -46,5 +47,21 @@ public class KaiFang {
         System.out.printf("%.2f%n", middle);
 
         return middle;
+    }
+    public static int sqrt1(int x){
+        double r=x>>1;
+        double l=1;
+        double mid=(l+r)/2;
+        double res=mid*mid;
+        while(Math.abs((res-x))>1){
+            if(res>x){
+                r=mid;
+            }else{
+                l=mid;
+            }
+            mid=(l+r)/2;
+            res=mid*mid;
+        }
+        return (int)r;
     }
 }
