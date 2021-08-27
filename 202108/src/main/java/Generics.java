@@ -1,4 +1,4 @@
-import sun.rmi.runtime.Log;
+
 
 /**
  * @title: Generics

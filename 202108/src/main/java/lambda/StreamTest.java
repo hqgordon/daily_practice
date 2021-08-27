@@ -1,8 +1,8 @@
 package lambda;
 
-import com.sun.tools.javac.util.List;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -42,15 +42,14 @@ public class StreamTest {
 // 将int[]数组变为IntStream:
         IntStream is = Arrays.stream(new int[]{1, 2, 3});
 // 将Stream<String>转换为LongStream:
-        LongStream ls = List.of("1", "2", "3").stream().mapToLong(Long::parseLong);
-        List.of("  Apple ", " pear ", " ORANGE", " BaNaNa ")
-                .stream()
+        LongStream ls = Stream.of("1", "2", "3").mapToLong(Long::parseLong);
+        Stream.of("  Apple ", " pear ", " ORANGE", " BaNaNa ")
                 .map(String::trim) // 去空格
                 .map(String::toLowerCase) // 变小写
                 .forEach(System.out::println); //
 
         Optional<Integer> sum = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).reduce(Integer::sum);
-        System.out.println(sum.isPresent()); // 45
+        System.out.println(true); // 45
     }
 
 
