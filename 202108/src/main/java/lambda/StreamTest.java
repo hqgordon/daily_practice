@@ -33,11 +33,6 @@ public class StreamTest {
 
 
 
-//       基本类型
-//        因为Java的范型不支持基本类型，所以我们无法用Stream<int>这样的类型，会发生编译错误。
-//        了保存int，只能使用Stream<Integer>，但这样会产生频繁的装箱、拆箱操作。为了提高效率，
-//        Java标准库提供了IntStream、LongStream和DoubleStream这三种使用基本类型的Stream，
-//        它们的使用方法和范型Stream没有大的区别，设计这三个Stream的目的是提高运行效率：
 
 // 将int[]数组变为IntStream:
         IntStream is = Arrays.stream(new int[]{1, 2, 3});

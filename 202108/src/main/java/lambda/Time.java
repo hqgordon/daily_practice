@@ -28,37 +28,35 @@ public class Time {
             arr[i]=random.nextInt(up);
         }
         long l,l2;
-        int max,max2,max3;
-        System.out.println("--------------");
+        int max;
+        System.out.println("------Stream并行--------");
          l = System.currentTimeMillis();
          max= Arrays.stream(arr).parallel().max().getAsInt();
          l2 = System.currentTimeMillis();
         System.out.println(l2-l+":max:"+max);
 
-        System.out.println("--------------");
+        System.out.println("-----Stream不使用并行---------");
         l = System.currentTimeMillis();
          max= Arrays.stream(arr).max().getAsInt();
         l2 = System.currentTimeMillis();
         System.out.println(l2-l+":max:"+max);
 
-
-        System.out.println("------------");
+        System.out.println("----增强for循环--------");
          l = System.currentTimeMillis();
-          max2=Integer.MIN_VALUE;
+          max=Integer.MIN_VALUE;
         for(int i:arr){
-            max2=Math.max(i,max2);
+            max=Math.max(i,max);
         }
          l2 = System.currentTimeMillis();
-        System.out.println(l2-l+":max:"+max2);
+        System.out.println(l2-l+":max:"+max);
 
-        System.out.println("------------");
+        System.out.println("--for循环----------");
         l = System.currentTimeMillis();
-         max3=Integer.MIN_VALUE;
+         max=Integer.MIN_VALUE;
         for(int i=0;i<n;i++){
-            max3=Math.max(arr[i],max3);
+            max=Math.max(arr[i],max);
         }
         l2 = System.currentTimeMillis();
-        System.out.println(l2-l+":max:"+max3);
-
+        System.out.println(l2-l+":max:"+max);
     }
 }
