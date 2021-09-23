@@ -1,3 +1,5 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -18,7 +20,7 @@ public class BalanceTree {
         if (root == null) {
             return true;
         }
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode pre = null;
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
