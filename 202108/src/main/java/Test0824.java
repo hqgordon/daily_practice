@@ -1,3 +1,6 @@
+import org.springframework.expression.Expression;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+
 import java.time.Duration;
 
 /**
@@ -9,13 +12,15 @@ import java.time.Duration;
  */
 public class Test0824 {
     public static void main(String[] args) {
+        SpelExpressionParser parser = new SpelExpressionParser();
+        Expression expression = parser.parseExpression("#root.val");
+        TreeNode order = new TreeNode();
+        order.setVal(2);
+        System.out.println(expression.getValue(order));
         String s="ssssfasd@sda.ccom";
         System.out.println(s.contains(""));
         Duration duration = Duration.ofHours(1);
         System.out.println(duration);
-        while(true){
-            Duration duration1=Duration.ofMillis(1000);
-            System.out.println(duration1);
-        }
+
     }
 }

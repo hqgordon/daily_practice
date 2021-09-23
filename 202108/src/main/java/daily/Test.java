@@ -1,8 +1,6 @@
 package daily;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @title: Test
@@ -18,10 +16,27 @@ public class Test {
         List<Integer> tmp = Arrays.asList(1,2,3);
         list2.add(tmp);
         list2.add(tmp);
-
         list2.add(tmp);
+        List<String> res=new ArrayList();
+        Deque<Character> path = new LinkedList();
+        path.add('2');
+        path.add('3');
+        String s1 = Arrays.toString(path.toArray());
+        String s = new String(String.valueOf(path));
+        System.out.println(s);
+        Map<Character, String> phoneMap = new HashMap<Character, String>() {{
+            put('2', "abc");
+            put('3', "def");
+            put('4', "ghi");
+            put('5', "jkl");
+            put('6', "mno");
+            put('7', "pqrs");
+            put('8', "tuv");
+            put('9', "wxyz");
+        }};
 
-        List<Integer> res=new ArrayList<>();
+
+        List<Integer> res1=new ArrayList<>();
         list2.forEach(list3->{
             list3 = Arrays.asList(1, 2, 3, 4);
             list.add(list3);
@@ -31,3 +46,4 @@ public class Test {
         list2.forEach(System.out::println);
     }
 }
+

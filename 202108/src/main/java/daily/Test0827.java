@@ -14,6 +14,7 @@ public class Test0827 {
 
         public List<List<Integer>> permute(int[] nums) {
             int len = nums.length;
+
             // 使用一个动态数组保存所有可能的全排列
             List<List<Integer>> res = new ArrayList<>();
             if (len == 0) {
