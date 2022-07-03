@@ -39,9 +39,8 @@ public class Bi360 {
                 res++;
                 i++;
                 pre=true;
-            } else if(nums[i] > nums[i + 1]&& pre){
-                continue;
-            }else {
+            }
+            else {
                 res++;
             }
         }
