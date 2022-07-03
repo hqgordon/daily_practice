@@ -1,6 +1,5 @@
 package bishi;
 
-import com.sun.prism.es2.ES2Graphics;
 
 import java.util.Scanner;
 
